@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ScanSpeak — Polityka prywatności</title>
+  <title>ScanSpeak — Privacy Policy</title>
   <style>
     :root {
       color-scheme: light dark;
@@ -39,6 +39,7 @@
     h1, h2, h3 { line-height: 1.2; }
     h1 { margin-bottom: 8px; }
     .meta { color: var(--muted); margin-bottom: 28px; }
+    .lang-switch { margin-bottom: 20px; }
     .card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -58,93 +59,96 @@
 </head>
 <body>
   <main>
-    <h1>Polityka prywatności ScanSpeak</h1>
-    <p class="meta">Ostatnia aktualizacja: 2026-06-27</p>
+    <p class="lang-switch"><a href="privacy-policy-pl.html" hreflang="pl">Polish version</a></p>
+
+    <h1>ScanSpeak Privacy Policy</h1>
+    <p class="meta">Last updated: 2026-06-30</p>
 
     <div class="card">
-      <strong>Administrator / kontakt developera:</strong><br>
+      <strong>Controller / developer contact:</strong><br>
       Pacior<br>
-      E-mail: <a href="mailto:tomasz.paciorek81@gmail.com">tomasz.paciorek81@gmail.com</a>
+      Email: <a href="mailto:tomasz.paciorek81@gmail.com">tomasz.paciorek81@gmail.com</a>
     </div>
 
-    <h2>1. Czym jest ScanSpeak</h2>
+    <h2>1. What ScanSpeak is</h2>
     <p>
-      ScanSpeak to aplikacja na Androida do skanowania stron książek, rozpoznawania tekstu
-      (OCR), zapisywania treści lokalnie na urządzeniu oraz odczytywania tekstu na głos.
+      ScanSpeak is an Android app for scanning book pages, recognizing text (OCR),
+      storing content locally on the device, and reading text aloud.
     </p>
 
-    <h2>2. Jakie dane przetwarza aplikacja</h2>
-    <p>Aplikacja może przetwarzać następujące dane zapisane lub używane przez użytkownika:</p>
+    <h2>2. What data the app processes</h2>
+    <p>The app may process the following data saved or used by the user:</p>
     <ul>
-      <li>obrazy zeskanowanych stron,</li>
-      <li>tekst rozpoznany metodą OCR,</li>
-      <li>tytuły skanów i metadane porządkowe,</li>
-      <li>ustawienia języka i szybkości czytania,</li>
-      <li>zapamiętane miejsce wznowienia odczytu,</li>
-      <li>dane techniczne potrzebne do działania systemowego odczytu na głos i powiadomień.</li>
+      <li>images of scanned pages,</li>
+      <li>text recognized using OCR,</li>
+      <li>scan titles and organizational metadata,</li>
+      <li>language and reading speed settings,</li>
+      <li>saved resume position,</li>
+      <li>technical data required for system text-to-speech and notifications.</li>
     </ul>
 
-    <h2>3. Gdzie dane są przechowywane</h2>
+    <h2>3. Where data is stored</h2>
     <p>
-      Dane skanów, tekst OCR, preferencje oraz stan wznowienia są przechowywane
-      <strong>lokalnie na urządzeniu użytkownika</strong> w pamięci aplikacji.
-      W aktualnym buildzie release backup danych użytkownika został wyłączony, aby nie kopiować
-      treści książek i historii czytania do backupu systemowego.
+      Scan data, OCR text, preferences, and resume state are stored
+      <strong>locally on the user's device</strong> within the app's storage.
+      In the current release build, user data backup is disabled so that book content
+      and reading history are not copied to system backup services.
     </p>
 
-    <h2>4. Kiedy dane opuszczają urządzenie</h2>
+    <h2>4. When data leaves the device</h2>
     <p>
-      Domyślnie ScanSpeak działa lokalnie. Wyjątkiem jest opcjonalna funkcja
-      <strong>„Popraw tekst”</strong>. Po jej użyciu wybrany tekst może zostać wysłany do zewnętrznej
-      usługi LanguageTool w celu wygenerowania sugestii ortograficznych i gramatycznych.
+      By default, ScanSpeak works locally. The exception is the optional
+      <strong>"Improve text"</strong> feature. When used, selected text may be sent to the external
+      LanguageTool service to generate spelling and grammar suggestions.
     </p>
     <p>
-      Adres używany przez aplikację w tej funkcji: <code>https://api.languagetool.org/v2/check</code>
+      Endpoint used by the app for this feature: <code>https://api.languagetool.org/v2/check</code>
     </p>
     <p>
-      Jeśli nie używasz funkcji poprawy tekstu, aplikacja nie wysyła treści zeskanowanych stron do tej usługi.
+      If you do not use the text improvement feature, the app does not send scanned page content to this service.
     </p>
 
-    <h2>5. Uprawnienia i funkcje systemowe</h2>
+    <h2>5. Permissions and system features</h2>
     <ul>
-      <li><strong>Aparat / skaner dokumentów</strong> — do skanowania stron.</li>
-      <li><strong>Internet</strong> — do opcjonalnej poprawy tekstu przez LanguageTool.</li>
-      <li><strong>Powiadomienia</strong> — do sterowania czytaniem w tle.</li>
-      <li><strong>Foreground service (media playback)</strong> — aby odczyt na głos mógł działać po zminimalizowaniu aplikacji.</li>
+      <li><strong>Camera / document scanner</strong> — to scan pages.</li>
+      <li><strong>Internet</strong> — for optional text improvement via LanguageTool.</li>
+      <li><strong>Notifications</strong> — to control background reading.</li>
+      <li><strong>Foreground service (media playback)</strong> — so text-to-speech can continue after the app is minimized.</li>
     </ul>
 
-    <h2>6. Reklamy, analityka, konta użytkowników</h2>
+    <h2>6. Ads, analytics, and user accounts</h2>
     <p>
-      W przeanalizowanym buildzie produkcyjnym ScanSpeak:
+      In the reviewed production build of ScanSpeak:
     </p>
     <ul>
-      <li>nie wymaga zakładania konta,</li>
-      <li>nie wyświetla reklam,</li>
-      <li>nie używa SDK analitycznych do śledzenia zachowania użytkownika.</li>
+      <li>it does not require creating an account,</li>
+      <li>it does not display ads,</li>
+      <li>it does not use analytics SDKs to track user behavior.</li>
     </ul>
 
-    <h2>7. Jak usunąć dane</h2>
+    <h2>7. How to delete data</h2>
     <p>
-      Użytkownik może usuwać zapisane skany bezpośrednio w aplikacji. Usunięcie skanu powoduje
-      usunięcie powiązanego tekstu i zapisanych plików stron z pamięci aplikacji.
+      Users can delete saved scans directly in the app. Deleting a scan removes
+      the related text and stored page files from the app's storage.
     </p>
 
-    <h2>8. Udostępnianie danych osobom trzecim</h2>
+    <h2>8. Sharing data with third parties</h2>
     <p>
-      Dane nie są sprzedawane. Poza opisanym wyżej opcjonalnym użyciem LanguageTool do poprawy tekstu,
-      aplikacja nie przekazuje treści użytkownika zewnętrznym usługom w normalnym przepływie działania.
+      Data is not sold. Except for the optional use of LanguageTool described above
+      for text improvement, the app does not share user content with external services
+      during normal operation.
     </p>
 
-    <h2>9. Kontakt</h2>
+    <h2>9. Contact</h2>
     <p>
-      W sprawach prywatności i działania aplikacji skontaktuj się pod adresem:
+      For privacy or app-related questions, contact:
       <a href="mailto:tomasz.paciorek81@gmail.com">tomasz.paciorek81@gmail.com</a>
     </p>
 
-    <h2>10. Zmiany polityki</h2>
+    <h2>10. Changes to this policy</h2>
     <p>
-      Ta polityka może być aktualizowana wraz ze zmianami funkcji aplikacji, sposobu przetwarzania danych
-      lub wymagań Google Play.
+      This policy may be updated as the app's features, data processing practices,
+      or Google Play requirements change.
     </p>
   </main>
 </body>

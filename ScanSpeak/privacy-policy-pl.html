@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ScanSpeak — Polityka prywatności</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --card: #f8fafc;
+      --accent: #2563eb;
+      --border: #dbeafe;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --card: #111827;
+        --accent: #93c5fd;
+        --border: #1e3a8a;
+      }
+    }
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2, h3 { line-height: 1.2; }
+    h1 { margin-bottom: 8px; }
+    .meta { color: var(--muted); margin-bottom: 28px; }
+    .lang-switch { margin-bottom: 20px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin: 20px 0;
+    }
+    a { color: var(--accent); }
+    code {
+      font-family: Consolas, monospace;
+      background: rgba(127,127,127,.12);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    ul { padding-left: 22px; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="lang-switch"><a href="privacy-policy.html" hreflang="en">English version</a></p>
+
+    <h1>Polityka prywatności ScanSpeak</h1>
+    <p class="meta">Ostatnia aktualizacja: 2026-06-30</p>
+
+    <div class="card">
+      <strong>Administrator / kontakt developera:</strong><br>
+      Pacior<br>
+      E-mail: <a href="mailto:tomasz.paciorek81@gmail.com">tomasz.paciorek81@gmail.com</a>
+    </div>
+
+    <h2>1. Czym jest ScanSpeak</h2>
+    <p>
+      ScanSpeak to aplikacja na Androida do skanowania stron książek, rozpoznawania tekstu
+      (OCR), zapisywania treści lokalnie na urządzeniu oraz odczytywania tekstu na głos.
+    </p>
+
+    <h2>2. Jakie dane przetwarza aplikacja</h2>
+    <p>Aplikacja może przetwarzać następujące dane zapisane lub używane przez użytkownika:</p>
+    <ul>
+      <li>obrazy zeskanowanych stron,</li>
+      <li>tekst rozpoznany metodą OCR,</li>
+      <li>tytuły skanów i metadane porządkowe,</li>
+      <li>ustawienia języka i szybkości czytania,</li>
+      <li>zapamiętane miejsce wznowienia odczytu,</li>
+      <li>dane techniczne potrzebne do działania systemowego odczytu na głos i powiadomień.</li>
+    </ul>
+
+    <h2>3. Gdzie dane są przechowywane</h2>
+    <p>
+      Dane skanów, tekst OCR, preferencje oraz stan wznowienia są przechowywane
+      <strong>lokalnie na urządzeniu użytkownika</strong> w pamięci aplikacji.
+      W aktualnym buildzie release backup danych użytkownika został wyłączony, aby nie kopiować
+      treści książek i historii czytania do backupu systemowego.
+    </p>
+
+    <h2>4. Kiedy dane opuszczają urządzenie</h2>
+    <p>
+      Domyślnie ScanSpeak działa lokalnie. Wyjątkiem jest opcjonalna funkcja
+      <strong>„Popraw tekst”</strong>. Po jej użyciu wybrany tekst może zostać wysłany do zewnętrznej
+      usługi LanguageTool w celu wygenerowania sugestii ortograficznych i gramatycznych.
+    </p>
+    <p>
+      Adres używany przez aplikację w tej funkcji: <code>https://api.languagetool.org/v2/check</code>
+    </p>
+    <p>
+      Jeśli nie używasz funkcji poprawy tekstu, aplikacja nie wysyła treści zeskanowanych stron do tej usługi.
+    </p>
+
+    <h2>5. Uprawnienia i funkcje systemowe</h2>
+    <ul>
+      <li><strong>Aparat / skaner dokumentów</strong> — do skanowania stron.</li>
+      <li><strong>Internet</strong> — do opcjonalnej poprawy tekstu przez LanguageTool.</li>
+      <li><strong>Powiadomienia</strong> — do sterowania czytaniem w tle.</li>
+      <li><strong>Foreground service (media playback)</strong> — aby odczyt na głos mógł działać po zminimalizowaniu aplikacji.</li>
+    </ul>
+
+    <h2>6. Reklamy, analityka, konta użytkowników</h2>
+    <p>
+      W przeanalizowanym buildzie produkcyjnym ScanSpeak:
+    </p>
+    <ul>
+      <li>nie wymaga zakładania konta,</li>
+      <li>nie wyświetla reklam,</li>
+      <li>nie używa SDK analitycznych do śledzenia zachowania użytkownika.</li>
+    </ul>
+
+    <h2>7. Jak usunąć dane</h2>
+    <p>
+      Użytkownik może usuwać zapisane skany bezpośrednio w aplikacji. Usunięcie skanu powoduje
+      usunięcie powiązanego tekstu i zapisanych plików stron z pamięci aplikacji.
+    </p>
+
+    <h2>8. Udostępnianie danych osobom trzecim</h2>
+    <p>
+      Dane nie są sprzedawane. Poza opisanym wyżej opcjonalnym użyciem LanguageTool do poprawy tekstu,
+      aplikacja nie przekazuje treści użytkownika zewnętrznym usługom w normalnym przepływie działania.
+    </p>
+
+    <h2>9. Kontakt</h2>
+    <p>
+      W sprawach prywatności i działania aplikacji skontaktuj się pod adresem:
+      <a href="mailto:tomasz.paciorek81@gmail.com">tomasz.paciorek81@gmail.com</a>
+    </p>
+
+    <h2>10. Zmiany polityki</h2>
+    <p>
+      Ta polityka może być aktualizowana wraz ze zmianami funkcji aplikacji, sposobu przetwarzania danych
+      lub wymagań Google Play.
+    </p>
+  </main>
+</body>
+</html>
