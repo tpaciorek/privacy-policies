@@ -62,7 +62,7 @@
     <p class="lang-switch"><a href="privacy-policy.html" hreflang="en">English version</a></p>
 
     <h1>Polityka prywatności ScanSpeak</h1>
-    <p class="meta">Ostatnia aktualizacja: 2026-06-30</p>
+    <p class="meta">Ostatnia aktualizacja: 2026-08-03</p>
 
     <div class="card">
       <strong>Administrator / kontakt developera:</strong><br>
@@ -118,13 +118,24 @@
 
     <h2>6. Reklamy, analityka, konta użytkowników</h2>
     <p>
-      W przeanalizowanym buildzie produkcyjnym ScanSpeak:
+      ScanSpeak:
     </p>
     <ul>
       <li>nie wymaga zakładania konta,</li>
       <li>nie wyświetla reklam,</li>
-      <li>nie używa SDK analitycznych do śledzenia zachowania użytkownika.</li>
+      <li>używa <strong>Firebase Crashlytics</strong> i <strong>Firebase Analytics</strong> (dostarczanych przez Google)
+        do zbierania raportów o awariach/ANR oraz podstawowych statystyk użycia — np. odwiedzanych ekranów,
+        korzystania z funkcji, wersji aplikacji oraz modelu urządzenia i systemu. Te dane służą wyłącznie
+        do diagnozowania błędów i rozumienia sposobu korzystania z funkcji; nigdy nie obejmują obrazów
+        zeskanowanych stron ani tekstu OCR.</li>
     </ul>
+    <p>
+      Firebase może przypisać instalacji aplikacji losowy identyfikator, a w zależności od ustawień
+      urządzenia — wykorzystać identyfikator reklamowy, aby rozróżniać użytkowników w zagregowanych
+      statystykach. Szczegóły dotyczące przetwarzania tych danych przez Google znajdziesz w
+      <a href="https://firebase.google.com/support/privacy">polityce prywatności i bezpieczeństwa Firebase</a>
+      oraz w <a href="https://policies.google.com/privacy">Polityce prywatności Google</a>.
+    </p>
 
     <h2>7. Jak usunąć dane</h2>
     <p>
@@ -134,8 +145,10 @@
 
     <h2>8. Udostępnianie danych osobom trzecim</h2>
     <p>
-      Dane nie są sprzedawane. Poza opisanym wyżej opcjonalnym użyciem LanguageTool do poprawy tekstu,
-      aplikacja nie przekazuje treści użytkownika zewnętrznym usługom w normalnym przepływie działania.
+      Dane nie są sprzedawane. Dane o awariach i użyciu opisane w punkcie 6 są przetwarzane przez
+      Google (Firebase) na zlecenie ScanSpeak. Poza tym oraz opisanym wyżej opcjonalnym użyciem
+      LanguageTool do poprawy tekstu, aplikacja nie przekazuje treści użytkownika zewnętrznym
+      usługom w normalnym przepływie działania.
     </p>
 
     <h2>9. Kontakt</h2>

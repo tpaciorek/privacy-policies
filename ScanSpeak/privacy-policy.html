@@ -62,7 +62,7 @@
     <p class="lang-switch"><a href="privacy-policy-pl.html" hreflang="pl">Polish version</a></p>
 
     <h1>ScanSpeak Privacy Policy</h1>
-    <p class="meta">Last updated: 2026-06-30</p>
+    <p class="meta">Last updated: 2026-08-03</p>
 
     <div class="card">
       <strong>Controller / developer contact:</strong><br>
@@ -118,13 +118,23 @@
 
     <h2>6. Ads, analytics, and user accounts</h2>
     <p>
-      In the reviewed production build of ScanSpeak:
+      ScanSpeak:
     </p>
     <ul>
-      <li>it does not require creating an account,</li>
-      <li>it does not display ads,</li>
-      <li>it does not use analytics SDKs to track user behavior.</li>
+      <li>does not require creating an account,</li>
+      <li>does not display ads,</li>
+      <li>uses <strong>Firebase Crashlytics</strong> and <strong>Firebase Analytics</strong> (provided by Google)
+        to collect crash/ANR reports and basic usage statistics — such as screens visited, feature usage,
+        app version, and device/OS model. This data is used only to diagnose bugs and understand feature usage;
+        it never includes scanned page images or OCR text.</li>
     </ul>
+    <p>
+      Firebase may assign the app installation a random identifier, and, depending on device settings,
+      use the advertising ID, to distinguish users in aggregate statistics. See Google's
+      <a href="https://firebase.google.com/support/privacy">Firebase privacy and security policy</a>
+      and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> for details on
+      how Google processes this data.
+    </p>
 
     <h2>7. How to delete data</h2>
     <p>
@@ -134,7 +144,8 @@
 
     <h2>8. Sharing data with third parties</h2>
     <p>
-      Data is not sold. Except for the optional use of LanguageTool described above
+      Data is not sold. Crash and usage data described in section 6 is processed by Google (Firebase)
+      on ScanSpeak's behalf. Except for that and the optional use of LanguageTool described above
       for text improvement, the app does not share user content with external services
       during normal operation.
     </p>
