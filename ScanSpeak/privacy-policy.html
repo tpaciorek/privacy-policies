@@ -62,7 +62,7 @@
     <p class="lang-switch"><a href="privacy-policy-pl.html" hreflang="pl">Polish version</a></p>
 
     <h1>ScanSpeak Privacy Policy</h1>
-    <p class="meta">Last updated: 2026-06-30</p>
+    <p class="meta">Last updated: 2026-09-11</p>
 
     <div class="card">
       <strong>Controller / developer contact:</strong><br>
@@ -73,47 +73,103 @@
     <h2>1. What ScanSpeak is</h2>
     <p>
       ScanSpeak is an Android app for scanning book pages, recognizing text (OCR),
-      storing content locally on the device, and reading text aloud.
+      storing content locally on the device, translating text into other languages,
+      and reading text aloud.
     </p>
 
     <h2>2. What data the app processes</h2>
     <p>The app may process the following data saved or used by the user:</p>
     <ul>
       <li>images of scanned pages,</li>
-      <li>text recognized using OCR,</li>
+      <li>text recognized using OCR and text added from the clipboard or from files,</li>
+      <li>translations of scan text,</li>
       <li>scan titles and organizational metadata,</li>
-      <li>language and reading speed settings,</li>
+      <li>language, voice, reading speed, and translation settings,</li>
       <li>saved resume position,</li>
+      <li>audio files created with the "Export to audio" feature,</li>
+      <li>downloaded translation language models,</li>
       <li>technical data required for system text-to-speech and notifications.</li>
     </ul>
 
     <h2>3. Where data is stored</h2>
     <p>
-      Scan data, OCR text, preferences, and resume state are stored
+      Scan data, OCR text, translations, preferences, and resume state are stored
       <strong>locally on the user's device</strong> within the app's storage.
       In the current release build, user data backup is disabled so that book content
       and reading history are not copied to system backup services.
     </p>
+    <p>
+      Translation language models are stored on the device by the Google ML Kit library.
+      Files created with "Export to audio" are saved in the public <code>Music/ScanSpeak</code>
+      folder so they can be played in other apps.
+    </p>
 
     <h2>4. When data leaves the device</h2>
+
+    <h3>4.1. Text correction (LanguageTool)</h3>
     <p>
-      By default, ScanSpeak works locally. The exception is the optional
-      <strong>"Improve text"</strong> feature. When used, selected text may be sent to the external
-      LanguageTool service to generate spelling and grammar suggestions.
+      To fix text recognition errors, the app sends the recognized text of pages to the external
+      <strong>LanguageTool</strong> service (LanguageTooler GmbH), which returns spelling and grammar
+      suggestions. This happens:
+    </p>
+    <ul>
+      <li>automatically after saving a new camera scan, after creating a scan from a file, and after adding pages to a scan from images or files,</li>
+      <li>when the <strong>"Improve text"</strong> feature is used manually.</li>
+    </ul>
+    <p>
+      Text added from the clipboard is not sent automatically. Only the text content of pages and the
+      language code are sent — no images, titles, or user identifiers. When the device is offline,
+      the app applies local text formatting only.
     </p>
     <p>
-      Endpoint used by the app for this feature: <code>https://api.languagetool.org/v2/check</code>
+      Endpoint used by the app: <code>https://api.languagetool.org/v2/check</code>.
+      LanguageTool's processing is described in the
+      <a href="https://languagetool.org/legal/privacy">LanguageTool privacy policy</a>.
+    </p>
+
+    <h3>4.2. Text translation</h3>
+    <p>
+      Translation runs <strong>on the device</strong> using Google ML Kit — the content of scans and
+      translations is not sent to any server. The first time a language is used, the app downloads
+      its language model (about 30 MB) from Google servers. Users can limit model downloads to Wi-Fi
+      and delete downloaded models in the app settings.
+    </p>
+
+    <h3>4.3. Google ML Kit and Google Play services</h3>
+    <p>
+      Text recognition (OCR), the document scanner, and translation use the <strong>Google ML Kit</strong>
+      library and Google Play services. Images and text are processed on the device. The text
+      recognition model is delivered through Google Play services.
     </p>
     <p>
-      If you do not use the text improvement feature, the app does not send scanned page content to this service.
+      ML Kit sends technical data to Google for diagnostics and usage analytics: device information
+      (manufacturer, model, OS version), package name and app version, performance metrics, and the
+      configuration of the features used, and for translation also the selected source and target
+      languages. For translation, ML Kit uses Firebase Installations and Firebase Remote Config, which
+      rely on an app installation identifier. This data is encrypted in transit (HTTPS).
+      <strong>Page images and text content are not sent this way.</strong>
+    </p>
+    <p>
+      Details: <a href="https://developers.google.com/ml-kit/android-data-disclosure">Google's ML Kit
+      data disclosure</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.
+    </p>
+
+    <h3>4.4. Reading aloud</h3>
+    <p>
+      Reading aloud uses the text-to-speech engine installed on the system (for example Google or Samsung).
+      Offline voices process text on the device. If the user selects a voice marked as online in the
+      settings, the text-to-speech engine may send the text being read to its provider's servers under
+      that provider's privacy policy.
     </p>
 
     <h2>5. Permissions and system features</h2>
     <ul>
-      <li><strong>Camera / document scanner</strong> — to scan pages.</li>
-      <li><strong>Internet</strong> — for optional text improvement via LanguageTool.</li>
-      <li><strong>Notifications</strong> — to control background reading.</li>
+      <li><strong>Document scanner (Google Play services)</strong> — to scan pages; the camera is handled by Google Play services and the app does not request the camera permission.</li>
+      <li><strong>Internet</strong> — for text correction via LanguageTool, downloading language models, and ML Kit diagnostic data.</li>
+      <li><strong>Network state</strong> — to check whether the device is on Wi-Fi when model downloads are limited to Wi-Fi.</li>
+      <li><strong>Notifications</strong> — to control background reading and report audio export progress.</li>
       <li><strong>Foreground service (media playback)</strong> — so text-to-speech can continue after the app is minimized.</li>
+      <li><strong>Foreground service (data sync)</strong> — so audio export can finish in the background.</li>
     </ul>
 
     <h2>6. Ads, analytics, and user accounts</h2>
@@ -123,21 +179,27 @@
     <ul>
       <li>it does not require creating an account,</li>
       <li>it does not display ads,</li>
-      <li>it does not use analytics SDKs to track user behavior.</li>
+      <li>it contains no in-house analytics or analytics SDKs that track user behavior;
+        the only diagnostic data is the technical data sent by Google ML Kit, described in section 4.3.</li>
     </ul>
 
     <h2>7. How to delete data</h2>
-    <p>
-      Users can delete saved scans directly in the app. Deleting a scan removes
-      the related text and stored page files from the app's storage.
-    </p>
+    <ul>
+      <li>Deleting a scan in the app removes the related text, translations, and stored page files from the app's storage.</li>
+      <li>Downloaded language models can be deleted in the app settings, in the "Translation" card.</li>
+      <li>Audio export files in the <code>Music/ScanSpeak</code> folder can be deleted with a file manager.</li>
+      <li>Uninstalling the app removes all data stored in the app's storage.</li>
+    </ul>
 
     <h2>8. Sharing data with third parties</h2>
     <p>
-      Data is not sold. Except for the optional use of LanguageTool described above
-      for text improvement, the app does not share user content with external services
-      during normal operation.
+      Data is not sold. During normal operation, data leaves the device only as described in section 4:
     </p>
+    <ul>
+      <li>page text — to LanguageTool for text correction (section 4.1),</li>
+      <li>technical data and language model downloads — to Google through ML Kit and Google Play services (sections 4.2 and 4.3),</li>
+      <li>text being read — to the text-to-speech engine provider, only when the user selects an online voice (section 4.4).</li>
+    </ul>
 
     <h2>9. Contact</h2>
     <p>

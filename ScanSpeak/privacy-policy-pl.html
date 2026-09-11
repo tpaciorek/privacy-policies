@@ -62,7 +62,7 @@
     <p class="lang-switch"><a href="privacy-policy.html" hreflang="en">English version</a></p>
 
     <h1>Polityka prywatności ScanSpeak</h1>
-    <p class="meta">Ostatnia aktualizacja: 2026-06-30</p>
+    <p class="meta">Ostatnia aktualizacja: 2026-09-11</p>
 
     <div class="card">
       <strong>Administrator / kontakt developera:</strong><br>
@@ -73,47 +73,104 @@
     <h2>1. Czym jest ScanSpeak</h2>
     <p>
       ScanSpeak to aplikacja na Androida do skanowania stron książek, rozpoznawania tekstu
-      (OCR), zapisywania treści lokalnie na urządzeniu oraz odczytywania tekstu na głos.
+      (OCR), zapisywania treści lokalnie na urządzeniu, tłumaczenia tekstu na inne języki
+      oraz odczytywania tekstu na głos.
     </p>
 
     <h2>2. Jakie dane przetwarza aplikacja</h2>
     <p>Aplikacja może przetwarzać następujące dane zapisane lub używane przez użytkownika:</p>
     <ul>
       <li>obrazy zeskanowanych stron,</li>
-      <li>tekst rozpoznany metodą OCR,</li>
+      <li>tekst rozpoznany metodą OCR oraz tekst dodany ze schowka lub z plików,</li>
+      <li>tłumaczenia tekstu skanów,</li>
       <li>tytuły skanów i metadane porządkowe,</li>
-      <li>ustawienia języka i szybkości czytania,</li>
+      <li>ustawienia języka, głosu, szybkości czytania i tłumaczenia,</li>
       <li>zapamiętane miejsce wznowienia odczytu,</li>
+      <li>pliki audio utworzone funkcją „Eksportuj do audio”,</li>
+      <li>pobrane modele językowe do tłumaczenia,</li>
       <li>dane techniczne potrzebne do działania systemowego odczytu na głos i powiadomień.</li>
     </ul>
 
     <h2>3. Gdzie dane są przechowywane</h2>
     <p>
-      Dane skanów, tekst OCR, preferencje oraz stan wznowienia są przechowywane
+      Dane skanów, tekst OCR, tłumaczenia, preferencje oraz stan wznowienia są przechowywane
       <strong>lokalnie na urządzeniu użytkownika</strong> w pamięci aplikacji.
       W aktualnym buildzie release backup danych użytkownika został wyłączony, aby nie kopiować
       treści książek i historii czytania do backupu systemowego.
     </p>
+    <p>
+      Modele językowe do tłumaczenia są zapisywane na urządzeniu przez bibliotekę Google ML Kit.
+      Pliki utworzone funkcją „Eksportuj do audio” są zapisywane w publicznym folderze
+      <code>Music/ScanSpeak</code>, dzięki czemu można je odtworzyć w innych aplikacjach.
+    </p>
 
     <h2>4. Kiedy dane opuszczają urządzenie</h2>
+
+    <h3>4.1. Poprawa tekstu (LanguageTool)</h3>
     <p>
-      Domyślnie ScanSpeak działa lokalnie. Wyjątkiem jest opcjonalna funkcja
-      <strong>„Popraw tekst”</strong>. Po jej użyciu wybrany tekst może zostać wysłany do zewnętrznej
-      usługi LanguageTool w celu wygenerowania sugestii ortograficznych i gramatycznych.
+      Aby poprawić błędy rozpoznawania tekstu, aplikacja wysyła rozpoznany tekst stron do zewnętrznej
+      usługi <strong>LanguageTool</strong> (LanguageTooler GmbH), która zwraca sugestie ortograficzne
+      i gramatyczne. Dzieje się to:
+    </p>
+    <ul>
+      <li>automatycznie po zapisaniu nowego skanu z aparatu, po utworzeniu skanu z pliku oraz po dodaniu stron do skanu ze zdjęć lub plików,</li>
+      <li>po ręcznym użyciu funkcji <strong>„Popraw tekst”</strong>.</li>
+    </ul>
+    <p>
+      Tekst dodany ze schowka nie jest wysyłany automatycznie. Wysyłana jest wyłącznie treść tekstowa
+      stron wraz z kodem języka — bez obrazów, tytułów i identyfikatorów użytkownika. Gdy urządzenie
+      nie ma połączenia z internetem, aplikacja stosuje tylko lokalne formatowanie tekstu.
     </p>
     <p>
-      Adres używany przez aplikację w tej funkcji: <code>https://api.languagetool.org/v2/check</code>
+      Adres używany przez aplikację: <code>https://api.languagetool.org/v2/check</code>.
+      Przetwarzanie danych przez LanguageTool opisuje
+      <a href="https://languagetool.org/legal/privacy">polityka prywatności LanguageTool</a>.
+    </p>
+
+    <h3>4.2. Tłumaczenie tekstu</h3>
+    <p>
+      Tłumaczenie odbywa się <strong>na urządzeniu</strong> za pomocą Google ML Kit — treść skanów
+      i tłumaczeń nie jest wysyłana na żaden serwer. Przy pierwszym użyciu danego języka aplikacja
+      pobiera z serwerów Google jego model językowy (ok. 30 MB). Użytkownik może ograniczyć pobieranie
+      modeli do sieci Wi-Fi i usuwać pobrane modele w ustawieniach aplikacji.
+    </p>
+
+    <h3>4.3. Google ML Kit i Usługi Google Play</h3>
+    <p>
+      Rozpoznawanie tekstu (OCR), skaner dokumentów i tłumaczenie korzystają z biblioteki
+      <strong>Google ML Kit</strong> oraz Usług Google Play. Przetwarzanie obrazów i tekstu odbywa się
+      na urządzeniu. Model rozpoznawania tekstu jest dostarczany przez Usługi Google Play.
     </p>
     <p>
-      Jeśli nie używasz funkcji poprawy tekstu, aplikacja nie wysyła treści zeskanowanych stron do tej usługi.
+      ML Kit przesyła do Google dane techniczne w celach diagnostycznych i statystyk użycia:
+      informacje o urządzeniu (producent, model, wersja systemu), nazwę pakietu i wersję aplikacji,
+      metryki wydajności oraz konfigurację użytych funkcji, a w przypadku tłumaczenia także wybrany
+      język źródłowy i docelowy. Na potrzeby tłumaczenia ML Kit korzysta z usług Firebase Installations
+      i Firebase Remote Config, które używają identyfikatora instalacji aplikacji. Dane są szyfrowane
+      w transmisji (HTTPS). <strong>Obrazy stron ani treść tekstu nie są w ten sposób przesyłane.</strong>
+    </p>
+    <p>
+      Szczegóły: <a href="https://developers.google.com/ml-kit/android-data-disclosure">informacje Google
+      o danych zbieranych przez ML Kit</a> oraz
+      <a href="https://policies.google.com/privacy">Polityka prywatności Google</a>.
+    </p>
+
+    <h3>4.4. Odczyt na głos</h3>
+    <p>
+      Odczyt na głos korzysta z silnika syntezy mowy zainstalowanego w systemie (np. Google lub Samsung).
+      Głosy offline przetwarzają tekst na urządzeniu. Jeśli użytkownik wybierze w ustawieniach głos
+      oznaczony jako online, silnik syntezy mowy może przesyłać czytany tekst na serwery swojego dostawcy
+      zgodnie z jego polityką prywatności.
     </p>
 
     <h2>5. Uprawnienia i funkcje systemowe</h2>
     <ul>
-      <li><strong>Aparat / skaner dokumentów</strong> — do skanowania stron.</li>
-      <li><strong>Internet</strong> — do opcjonalnej poprawy tekstu przez LanguageTool.</li>
-      <li><strong>Powiadomienia</strong> — do sterowania czytaniem w tle.</li>
+      <li><strong>Skaner dokumentów (Usługi Google Play)</strong> — do skanowania stron; aparat obsługują Usługi Google Play, aplikacja nie prosi o uprawnienie do aparatu.</li>
+      <li><strong>Internet</strong> — do poprawy tekstu przez LanguageTool, pobierania modeli językowych i przesyłania danych diagnostycznych ML Kit.</li>
+      <li><strong>Stan sieci</strong> — do sprawdzenia, czy urządzenie jest połączone z Wi-Fi, gdy włączone jest pobieranie modeli tylko przez Wi-Fi.</li>
+      <li><strong>Powiadomienia</strong> — do sterowania czytaniem w tle i informowania o eksporcie audio.</li>
       <li><strong>Foreground service (media playback)</strong> — aby odczyt na głos mógł działać po zminimalizowaniu aplikacji.</li>
+      <li><strong>Foreground service (data sync)</strong> — aby eksport do audio mógł dokończyć się w tle.</li>
     </ul>
 
     <h2>6. Reklamy, analityka, konta użytkowników</h2>
@@ -123,20 +180,28 @@
     <ul>
       <li>nie wymaga zakładania konta,</li>
       <li>nie wyświetla reklam,</li>
-      <li>nie używa SDK analitycznych do śledzenia zachowania użytkownika.</li>
+      <li>nie zawiera własnej analityki ani SDK analitycznych do śledzenia zachowania użytkownika;
+        jedyne dane diagnostyczne to dane techniczne przesyłane przez Google ML Kit, opisane w punkcie 4.3.</li>
     </ul>
 
     <h2>7. Jak usunąć dane</h2>
-    <p>
-      Użytkownik może usuwać zapisane skany bezpośrednio w aplikacji. Usunięcie skanu powoduje
-      usunięcie powiązanego tekstu i zapisanych plików stron z pamięci aplikacji.
-    </p>
+    <ul>
+      <li>Usunięcie skanu w aplikacji usuwa powiązany tekst, tłumaczenia i zapisane pliki stron z pamięci aplikacji.</li>
+      <li>Pobrane modele językowe można usunąć w ustawieniach aplikacji, w karcie „Tłumaczenie”.</li>
+      <li>Pliki z eksportu audio w folderze <code>Music/ScanSpeak</code> można usunąć menedżerem plików.</li>
+      <li>Odinstalowanie aplikacji usuwa wszystkie dane zapisane w pamięci aplikacji.</li>
+    </ul>
 
     <h2>8. Udostępnianie danych osobom trzecim</h2>
     <p>
-      Dane nie są sprzedawane. Poza opisanym wyżej opcjonalnym użyciem LanguageTool do poprawy tekstu,
-      aplikacja nie przekazuje treści użytkownika zewnętrznym usługom w normalnym przepływie działania.
+      Dane nie są sprzedawane. W normalnym działaniu aplikacji dane trafiają poza urządzenie wyłącznie
+      w sposób opisany w punkcie 4:
     </p>
+    <ul>
+      <li>tekst stron — do LanguageTool w celu poprawy tekstu (punkt 4.1),</li>
+      <li>dane techniczne i pobieranie modeli językowych — do Google przez ML Kit i Usługi Google Play (punkty 4.2 i 4.3),</li>
+      <li>czytany tekst — do dostawcy silnika syntezy mowy, tylko gdy użytkownik wybierze głos online (punkt 4.4).</li>
+    </ul>
 
     <h2>9. Kontakt</h2>
     <p>
