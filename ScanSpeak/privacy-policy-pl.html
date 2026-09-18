@@ -62,7 +62,7 @@
     <p class="lang-switch"><a href="privacy-policy.html" hreflang="en">English version</a></p>
 
     <h1>Polityka prywatności ScanSpeak</h1>
-    <p class="meta">Ostatnia aktualizacja: 2026-09-11</p>
+    <p class="meta">Ostatnia aktualizacja: 2026-09-18</p>
 
     <div class="card">
       <strong>Administrator / kontakt developera:</strong><br>
@@ -110,7 +110,8 @@
     <p>
       Aby poprawić błędy rozpoznawania tekstu, aplikacja wysyła rozpoznany tekst stron do zewnętrznej
       usługi <strong>LanguageTool</strong> (LanguageTooler GmbH), która zwraca sugestie ortograficzne
-      i gramatyczne. Dzieje się to:
+      i gramatyczne. Dzieje się to tylko wtedy, gdy w ustawieniach aplikacji włączona jest opcja
+      <strong>„Poprawiaj tekst online (LanguageTool)”</strong> — domyślnie jest włączona:
     </p>
     <ul>
       <li>automatycznie po zapisaniu nowego skanu z aparatu, po utworzeniu skanu z pliku oraz po dodaniu stron do skanu ze zdjęć lub plików,</li>
@@ -119,7 +120,8 @@
     <p>
       Tekst dodany ze schowka nie jest wysyłany automatycznie. Wysyłana jest wyłącznie treść tekstowa
       stron wraz z kodem języka — bez obrazów, tytułów i identyfikatorów użytkownika. Gdy urządzenie
-      nie ma połączenia z internetem, aplikacja stosuje tylko lokalne formatowanie tekstu.
+      nie ma połączenia z internetem albo opcja jest wyłączona, aplikacja stosuje tylko lokalne
+      formatowanie tekstu i nie wysyła żadnego tekstu do LanguageTool.
     </p>
     <p>
       Adres używany przez aplikację: <code>https://api.languagetool.org/v2/check</code>.

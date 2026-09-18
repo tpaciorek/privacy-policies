@@ -62,7 +62,7 @@
     <p class="lang-switch"><a href="privacy-policy-pl.html" hreflang="pl">Polish version</a></p>
 
     <h1>ScanSpeak Privacy Policy</h1>
-    <p class="meta">Last updated: 2026-09-11</p>
+    <p class="meta">Last updated: 2026-09-18</p>
 
     <div class="card">
       <strong>Controller / developer contact:</strong><br>
@@ -110,7 +110,8 @@
     <p>
       To fix text recognition errors, the app sends the recognized text of pages to the external
       <strong>LanguageTool</strong> service (LanguageTooler GmbH), which returns spelling and grammar
-      suggestions. This happens:
+      suggestions. This happens only while the <strong>"Correct text online (LanguageTool)"</strong>
+      option is turned on in the app's settings — it is on by default:
     </p>
     <ul>
       <li>automatically after saving a new camera scan, after creating a scan from a file, and after adding pages to a scan from images or files,</li>
@@ -118,8 +119,9 @@
     </ul>
     <p>
       Text added from the clipboard is not sent automatically. Only the text content of pages and the
-      language code are sent — no images, titles, or user identifiers. When the device is offline,
-      the app applies local text formatting only.
+      language code are sent — no images, titles, or user identifiers. When the device is offline or
+      the option is turned off, the app applies local text formatting only and sends no text to
+      LanguageTool.
     </p>
     <p>
       Endpoint used by the app: <code>https://api.languagetool.org/v2/check</code>.
