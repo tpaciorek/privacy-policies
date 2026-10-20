@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Walk &amp; Build World — Privacy Policy</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --card: #f8fafc;
+      --accent: #2563eb;
+      --border: #dbeafe;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --card: #111827;
+        --accent: #93c5fd;
+        --border: #1e3a8a;
+      }
+    }
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2, h3 { line-height: 1.2; }
+    h1 { margin-bottom: 8px; }
+    .meta { color: var(--muted); margin-bottom: 28px; }
+    .lang-switch { margin-bottom: 20px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin: 20px 0;
+    }
+    a { color: var(--accent); }
+    code {
+      font-family: Consolas, monospace;
+      background: rgba(127,127,127,.12);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    ul { padding-left: 22px; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="lang-switch"><a href="privacy-policy-pl.html" hreflang="pl">Polish version</a></p>
+
+    <h1>Walk &amp; Build World Privacy Policy</h1>
+    <p class="meta">Last updated: 2026-10-20</p>
+
+    <div class="card">
+      <strong>Controller / developer contact:</strong><br>
+      Pacior<br>
+      Email: <a href="mailto:tomasz.paciorek81@gmail.com">tomasz.paciorek81@gmail.com</a>
+    </div>
+
+    <h2>1. What Walk &amp; Build World is</h2>
+    <p>
+      Walk &amp; Build World is an Android game that turns the user's real daily step count into
+      in-game currency (Briksteps), which a crew of builders uses to construct famous places in 3D.
+      Package name: <code>com.pacior.walkbuild3d2</code>.
+    </p>
+
+    <h2>2. What data the app processes</h2>
+    <ul>
+      <li><strong>Step count</strong> — daily step totals read from Health Connect (only the <code>READ_STEPS</code> permission),</li>
+      <li><strong>game progress</strong> — Briksteps, buildings and modules placed, unlocked places, souvenirs and stories, upgrades,</li>
+      <li><strong>settings</strong> — game language, sound, music and vibration, consent choices,</li>
+      <li><strong>optional anonymous statistics</strong> and <strong>crash reports</strong> (section 4.3).</li>
+    </ul>
+    <p>
+      The app does not request location, contacts, camera, microphone or any health data other than step count,
+      and it does not read health data in the background.
+    </p>
+
+    <h2>3. Where data is stored</h2>
+    <p>
+      Daily step totals and game progress are stored <strong>locally on the user's device</strong> in the app's storage.
+      Step counts are used only to award Briksteps and to show the user's own activity charts.
+    </p>
+
+    <h2>4. When data leaves the device</h2>
+
+    <h3>4.1. Health Connect</h3>
+    <p>
+      Step counts are read on the device through Android Health Connect. The app does not write any data to
+      Health Connect. Access can be granted or revoked at any time in Health Connect settings; refusing access
+      does not block the game.
+    </p>
+
+    <h3>4.2. Optional backup to the user's Google Drive</h3>
+    <p>
+      If the user connects Google Drive, the game saves its save file (game progress, settings and daily step totals)
+      to a folder in <strong>the user's own Google Drive</strong>. The app uses only the <code>drive.file</code> scope,
+      which lets it see only files it created itself — it cannot read any other files on the user's Drive.
+      The developer has no access to this file. The backup can be removed by deleting the
+      "Walk &amp; Build World 2" folder from Google Drive, and access can be revoked in the Google Account settings.
+    </p>
+
+    <h3>4.3. Anonymous statistics and crash reports (Google Firebase)</h3>
+    <p>
+      <strong>Statistics</strong> (Firebase Analytics) are sent only if the user agrees in the game; the choice can be
+      changed in Settings at any time. They include game events (for example: building or place completed,
+      place entered, language changed), game language, phone language, app version and device information
+      (model, Android version), together with an app instance identifier. They do not include the user's name,
+      email, step counts or precise location. The advertising ID is not collected and ad personalisation is disabled.
+    </p>
+    <p>
+      <strong>Crash reports</strong> (Firebase Crashlytics) are on by default and can be turned off in Settings.
+      When the app crashes they send technical details: stack trace, app version, device model, Android version
+      and an installation identifier.
+    </p>
+    <p>
+      This data is processed by Google as a service provider and encrypted in transit (HTTPS). Details:
+      <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a> and the
+      <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.
+    </p>
+
+    <h2>5. Permissions</h2>
+    <ul>
+      <li><strong>Health Connect — read steps</strong> (<code>READ_STEPS</code>) — to turn steps into Briksteps.</li>
+      <li><strong>Internet</strong> — for the optional Google Drive backup, statistics and crash reports.</li>
+    </ul>
+
+    <h2>6. Ads, purchases and accounts</h2>
+    <ul>
+      <li>The game is free, shows no ads and has no in-app purchases.</li>
+      <li>No account is needed. Connecting Google Drive only grants access to the game's own backup file.</li>
+      <li>Data is not sold and not shared with third parties for advertising.</li>
+    </ul>
+
+    <h2>7. Children</h2>
+    <p>
+      The game is intended for users aged 13 and over and does not knowingly collect personal data from children.
+    </p>
+
+    <h2>8. How to delete data</h2>
+    <ul>
+      <li>Uninstalling the app (or clearing its storage) removes all data stored on the device.</li>
+      <li>The Drive backup can be deleted from Google Drive (folder "Walk &amp; Build World 2").</li>
+      <li>Statistics can be turned off in Settings; to request deletion of statistics or crash data already sent,
+        email the address below.</li>
+      <li>Step access can be revoked in Health Connect settings.</li>
+    </ul>
+
+    <h2>9. Contact</h2>
+    <p>
+      For privacy or app-related questions, contact:
+      <a href="mailto:tomasz.paciorek81@gmail.com">tomasz.paciorek81@gmail.com</a>
+    </p>
+
+    <h2>10. Changes to this policy</h2>
+    <p>
+      This policy may be updated as the app's features, data processing practices
+      or Google Play requirements change.
+    </p>
+  </main>
+</body>
+</html>

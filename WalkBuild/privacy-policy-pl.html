@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Walk &amp; Build World — Polityka prywatności</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --card: #f8fafc;
+      --accent: #2563eb;
+      --border: #dbeafe;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --card: #111827;
+        --accent: #93c5fd;
+        --border: #1e3a8a;
+      }
+    }
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1, h2, h3 { line-height: 1.2; }
+    h1 { margin-bottom: 8px; }
+    .meta { color: var(--muted); margin-bottom: 28px; }
+    .lang-switch { margin-bottom: 20px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin: 20px 0;
+    }
+    a { color: var(--accent); }
+    code {
+      font-family: Consolas, monospace;
+      background: rgba(127,127,127,.12);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    ul { padding-left: 22px; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="lang-switch"><a href="privacy-policy.html" hreflang="en">English version</a></p>
+
+    <h1>Polityka prywatności Walk &amp; Build World</h1>
+    <p class="meta">Ostatnia aktualizacja: 2026-10-20</p>
+
+    <div class="card">
+      <strong>Administrator / kontakt z twórcą:</strong><br>
+      Pacior<br>
+      E-mail: <a href="mailto:tomasz.paciorek81@gmail.com">tomasz.paciorek81@gmail.com</a>
+    </div>
+
+    <h2>1. Czym jest Walk &amp; Build World</h2>
+    <p>
+      Walk &amp; Build World to gra na Androida, która zamienia prawdziwą dzienną liczbę kroków użytkownika
+      w walutę gry (Brikstepy), za którą ekipa budowniczych wznosi w 3D słynne miejsca świata.
+      Nazwa pakietu: <code>com.pacior.walkbuild3d2</code>.
+    </p>
+
+    <h2>2. Jakie dane przetwarza aplikacja</h2>
+    <ul>
+      <li><strong>Liczba kroków</strong> — dzienne sumy kroków odczytywane z Health Connect (tylko uprawnienie <code>READ_STEPS</code>),</li>
+      <li><strong>postęp gry</strong> — Brikstepy, zbudowane budowle i moduły, odblokowane miejsca, pamiątki i anegdoty, ulepszenia,</li>
+      <li><strong>ustawienia</strong> — język gry, dźwięk, muzyka i wibracje, wybory dotyczące zgód,</li>
+      <li><strong>opcjonalne anonimowe statystyki</strong> i <strong>raporty awarii</strong> (punkt 4.3).</li>
+    </ul>
+    <p>
+      Aplikacja nie prosi o lokalizację, kontakty, aparat, mikrofon ani o inne dane zdrowotne niż liczba kroków
+      i nie odczytuje danych zdrowotnych w tle.
+    </p>
+
+    <h2>3. Gdzie dane są przechowywane</h2>
+    <p>
+      Dzienne sumy kroków i postęp gry są zapisywane <strong>lokalnie na urządzeniu użytkownika</strong>, w pamięci aplikacji.
+      Liczba kroków służy wyłącznie do przyznawania Brikstepów i pokazywania użytkownikowi jego własnych wykresów aktywności.
+    </p>
+
+    <h2>4. Kiedy dane opuszczają urządzenie</h2>
+
+    <h3>4.1. Health Connect</h3>
+    <p>
+      Kroki są odczytywane na urządzeniu przez Android Health Connect. Aplikacja niczego do Health Connect nie zapisuje.
+      Dostęp można w każdej chwili przyznać lub cofnąć w ustawieniach Health Connect; odmowa nie blokuje gry.
+    </p>
+
+    <h3>4.2. Opcjonalna kopia zapasowa na Dysku Google użytkownika</h3>
+    <p>
+      Jeśli użytkownik połączy Dysk Google, gra zapisuje plik zapisu (postęp gry, ustawienia i dzienne sumy kroków)
+      w folderze na <strong>własnym Dysku Google użytkownika</strong>. Aplikacja używa wyłącznie zakresu <code>drive.file</code>,
+      który pozwala jej widzieć tylko pliki utworzone przez nią samą — nie ma dostępu do innych plików na Dysku.
+      Twórca aplikacji nie ma dostępu do tego pliku. Kopię można usunąć, kasując folder „Walk &amp; Build World 2”
+      z Dysku Google, a dostęp można cofnąć w ustawieniach konta Google.
+    </p>
+
+    <h3>4.3. Anonimowe statystyki i raporty awarii (Google Firebase)</h3>
+    <p>
+      <strong>Statystyki</strong> (Firebase Analytics) są wysyłane tylko wtedy, gdy użytkownik wyrazi na to zgodę w grze;
+      wybór można zmienić w każdej chwili w Ustawieniach. Obejmują zdarzenia w grze (np. ukończenie budowli lub miejsca,
+      wejście do miejsca, zmianę języka), język gry, język telefonu, wersję aplikacji i informacje o urządzeniu
+      (model, wersja Androida) wraz z identyfikatorem instancji aplikacji. Nie obejmują imienia, adresu e-mail,
+      liczby kroków ani dokładnej lokalizacji. Identyfikator reklamowy nie jest zbierany, a personalizacja reklam jest wyłączona.
+    </p>
+    <p>
+      <strong>Raporty awarii</strong> (Firebase Crashlytics) są domyślnie włączone i można je wyłączyć w Ustawieniach.
+      Gdy aplikacja ulegnie awarii, wysyłają dane techniczne: ślad stosu, wersję aplikacji, model urządzenia,
+      wersję Androida i identyfikator instalacji.
+    </p>
+    <p>
+      Te dane przetwarza Google jako dostawca usług; są szyfrowane podczas przesyłania (HTTPS). Szczegóły:
+      <a href="https://firebase.google.com/support/privacy">informacje o prywatności Firebase</a> oraz
+      <a href="https://policies.google.com/privacy">Polityka prywatności Google</a>.
+    </p>
+
+    <h2>5. Uprawnienia</h2>
+    <ul>
+      <li><strong>Health Connect — odczyt kroków</strong> (<code>READ_STEPS</code>) — aby zamieniać kroki na Brikstepy.</li>
+      <li><strong>Internet</strong> — do opcjonalnej kopii na Dysku Google, statystyk i raportów awarii.</li>
+    </ul>
+
+    <h2>6. Reklamy, zakupy i konta</h2>
+    <ul>
+      <li>Gra jest bezpłatna, nie wyświetla reklam i nie ma zakupów w aplikacji.</li>
+      <li>Nie trzeba zakładać konta. Połączenie z Dyskiem Google daje dostęp tylko do pliku kopii gry.</li>
+      <li>Dane nie są sprzedawane ani udostępniane firmom zewnętrznym w celach reklamowych.</li>
+    </ul>
+
+    <h2>7. Dzieci</h2>
+    <p>
+      Gra jest przeznaczona dla użytkowników w wieku od 13 lat i świadomie nie zbiera danych osobowych dzieci.
+    </p>
+
+    <h2>8. Jak usunąć dane</h2>
+    <ul>
+      <li>Odinstalowanie aplikacji (lub wyczyszczenie jej danych) usuwa wszystkie dane zapisane na urządzeniu.</li>
+      <li>Kopię na Dysku można usunąć z Dysku Google (folder „Walk &amp; Build World 2”).</li>
+      <li>Statystyki można wyłączyć w Ustawieniach; aby poprosić o usunięcie już wysłanych statystyk lub raportów awarii,
+        napisz na adres poniżej.</li>
+      <li>Dostęp do kroków można cofnąć w ustawieniach Health Connect.</li>
+    </ul>
+
+    <h2>9. Kontakt</h2>
+    <p>
+      W sprawach prywatności i aplikacji:
+      <a href="mailto:tomasz.paciorek81@gmail.com">tomasz.paciorek81@gmail.com</a>
+    </p>
+
+    <h2>10. Zmiany polityki</h2>
+    <p>
+      Polityka może być aktualizowana wraz ze zmianami funkcji aplikacji, sposobu przetwarzania danych
+      lub wymagań Google Play.
+    </p>
+  </main>
+</body>
+</html>
