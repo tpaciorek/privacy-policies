@@ -62,7 +62,7 @@
     <p class="lang-switch"><a href="privacy-policy-pl.html" hreflang="pl">Polish version</a></p>
 
     <h1>Walk &amp; Build World Privacy Policy</h1>
-    <p class="meta">Last updated: 2026-10-20</p>
+    <p class="meta">Last updated: 2026-10-21</p>
 
     <div class="card">
       <strong>Controller / developer contact:</strong><br>
@@ -104,13 +104,20 @@
       does not block the game.
     </p>
 
-    <h3>4.2. Optional backup to the user's Google Drive</h3>
+    <h3>4.2. Backup in Google Play Games (Saved Games)</h3>
     <p>
-      If the user connects Google Drive, the game saves its save file (game progress, settings and daily step totals)
-      to a folder in <strong>the user's own Google Drive</strong>. The app uses only the <code>drive.file</code> scope,
-      which lets it see only files it created itself — it cannot read any other files on the user's Drive.
-      The developer has no access to this file. The backup can be removed by deleting the
-      "Walk &amp; Build World 2" folder from Google Drive, and access can be revoked in the Google Account settings.
+      The game backs up its save file (game progress, settings and daily step totals) to <strong>Saved Games in the user's own
+      Google Play Games account</strong>: one automatic backup refreshed once a day and up to 5 backups made on request.
+      Signing in to Google Play Games usually happens automatically. The game shows the player's Play Games display name in
+      Settings; it does not send it anywhere. Saved Games are stored by Google in the user's Google account and the developer
+      has no access to them. Backups can be managed or deleted in the Google Play Games app or in the Google Account settings.
+    </p>
+    <p>
+      <strong>Older backups on Google Drive.</strong> Versions of the game released before Google Play Games backups saved
+      copies to a "Walk &amp; Build World" folder on the user's Google Drive (scope <code>drive.file</code>, which lets the app see
+      only files it created itself). The game now only <em>reads</em> those copies once, to move them to Google Play Games; it
+      no longer writes to Google Drive and does not delete the old files. The folder can be deleted from Google Drive at any time,
+      and Drive access can be revoked in the Google Account settings.
     </p>
 
     <h3>4.3. Anonymous statistics and crash reports (Google Firebase)</h3>
@@ -135,13 +142,13 @@
     <h2>5. Permissions</h2>
     <ul>
       <li><strong>Health Connect — read steps</strong> (<code>READ_STEPS</code>) — to turn steps into Briksteps.</li>
-      <li><strong>Internet</strong> — for the optional Google Drive backup, statistics and crash reports.</li>
+      <li><strong>Internet</strong> — for backups in Google Play Games, moving old backups from Google Drive, statistics and crash reports.</li>
     </ul>
 
     <h2>6. Ads, purchases and accounts</h2>
     <ul>
       <li>The game is free, shows no ads and has no in-app purchases.</li>
-      <li>No account is needed. Connecting Google Drive only grants access to the game's own backup file.</li>
+      <li>No separate account is needed. Backups use the player's Google Play Games account; Google Drive access is used only to move old backups.</li>
       <li>Data is not sold and not shared with third parties for advertising.</li>
     </ul>
 
@@ -153,7 +160,7 @@
     <h2>8. How to delete data</h2>
     <ul>
       <li>Uninstalling the app (or clearing its storage) removes all data stored on the device.</li>
-      <li>The Drive backup can be deleted from Google Drive (folder "Walk &amp; Build World 2").</li>
+      <li>Backups can be deleted in Google Play Games (Saved Games) or the Google Account settings; old copies can be deleted from Google Drive (folder "Walk &amp; Build World").</li>
       <li>Statistics can be turned off in Settings; to request deletion of statistics or crash data already sent,
         email the address below.</li>
       <li>Step access can be revoked in Health Connect settings.</li>
