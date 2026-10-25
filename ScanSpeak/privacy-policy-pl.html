@@ -62,7 +62,7 @@
     <p class="lang-switch"><a href="privacy-policy.html" hreflang="en">English version</a></p>
 
     <h1>Polityka prywatności ScanSpeak</h1>
-    <p class="meta">Ostatnia aktualizacja: 2026-09-18</p>
+    <p class="meta">Ostatnia aktualizacja: 2026-10-25</p>
 
     <div class="card">
       <strong>Administrator / kontakt developera:</strong><br>
@@ -88,7 +88,8 @@
       <li>zapamiętane miejsce wznowienia odczytu,</li>
       <li>pliki audio utworzone funkcją „Eksportuj do audio”,</li>
       <li>pobrane modele językowe do tłumaczenia,</li>
-      <li>dane techniczne potrzebne do działania systemowego odczytu na głos i powiadomień.</li>
+      <li>dane techniczne potrzebne do działania systemowego odczytu na głos i powiadomień,</li>
+      <li>raporty awarii i statystyki użycia, gdy włączona jest opcja ich wysyłania (punkt 4.5).</li>
     </ul>
 
     <h2>3. Gdzie dane są przechowywane</h2>
@@ -165,10 +166,49 @@
       zgodnie z jego polityką prywatności.
     </p>
 
+    <h3>4.5. Raporty awarii i statystyki użycia (Google Firebase)</h3>
+    <p>
+      Aby wykrywać i naprawiać błędy oraz wiedzieć, z jakich funkcji i języków korzystają użytkownicy,
+      aplikacja używa usług <strong>Firebase Crashlytics</strong> i <strong>Google Analytics dla Firebase</strong>
+      (Google Ireland Limited / Google LLC). Dzieje się to tylko wtedy, gdy w Ustawieniach → Polityka
+      prywatności włączona jest opcja <strong>„Wysyłaj raporty awarii i statystyki użycia”</strong>.
+      Domyślnie jest włączona i można ją w każdej chwili wyłączyć — wtedy aplikacja nie wysyła nowych
+      raportów awarii ani statystyk.
+    </p>
+    <p>Wysyłane są:</p>
+    <ul>
+      <li><strong>raporty awarii</strong> — techniczny opis błędu (ślad stosu), stan aplikacji w chwili awarii, model i producent urządzenia, wersja Androida, wersja aplikacji, ilość wolnej pamięci i miejsca na dysku oraz język aplikacji i język czytania,</li>
+      <li><strong>statystyki użycia</strong> — uruchomienia aplikacji i sesje, wyświetlane ekrany, zapisanie skanu (źródło: aparat, plik lub schowek; liczba stron; język czytania i jego alfabet), rozpoczęcie czytania na głos (język mowy oraz to, czy czytana jest strona, czy cały tekst), język aplikacji i język czytania,</li>
+      <li><strong>identyfikatory techniczne</strong> — losowy identyfikator instalacji Firebase i identyfikator instancji aplikacji, służące do liczenia awarii i użytkowników; nie są powiązane z imieniem, adresem e-mail ani kontem Google użytkownika,</li>
+      <li><strong>przybliżona lokalizacja</strong> — Google ustala kraj i region na podstawie adresu IP; sam adres IP nie jest zapisywany przez Google Analytics.</li>
+    </ul>
+    <p>
+      <strong>Tekst, obrazy, tytuły i tłumaczenia skanów nigdy nie są wysyłane.</strong>
+      Aplikacja nie zbiera identyfikatora reklamowego (AD_ID), nie wykorzystuje danych do reklam ani
+      reklam spersonalizowanych i nie tworzy profilu użytkownika obejmującego inne aplikacje.
+    </p>
+    <p>
+      Crashlytics przechowuje raporty awarii przez 90 dni. Google Analytics przechowuje dane
+      o pojedynczych zdarzeniach przez 2 miesiące; zbiorcze raporty (np. liczba użytkowników
+      w danym kraju) mogą być przechowywane dłużej. Dane są szyfrowane w transmisji (HTTPS) i mogą być
+      przetwarzane na serwerach Google poza krajem użytkownika, także w Stanach Zjednoczonych,
+      z zabezpieczeniami stosowanymi przez Google.
+      Szczegóły: <a href="https://firebase.google.com/support/privacy">Prywatność i bezpieczeństwo w Firebase</a>
+      oraz <a href="https://policies.google.com/privacy">Polityka prywatności Google</a>.
+    </p>
+
+    <h3>4.6. Modele rozpoznawania tekstu dla rosyjskiego i arabskiego</h3>
+    <p>
+      Po wybraniu rosyjskiego lub arabskiego jako języka czytania aplikacja pobiera przez Google Play
+      dodatkowy moduł rozpoznawania tekstu oraz modele rozpoznawania (PaddleOCR) z serwisu
+      <code>huggingface.co</code>. To zwykłe pobranie stałych plików: nie są przy tym wysyłane obrazy,
+      tekst ani identyfikatory, a samo rozpoznawanie tekstu odbywa się na urządzeniu.
+    </p>
+
     <h2>5. Uprawnienia i funkcje systemowe</h2>
     <ul>
       <li><strong>Skaner dokumentów (Usługi Google Play)</strong> — do skanowania stron; aparat obsługują Usługi Google Play, aplikacja nie prosi o uprawnienie do aparatu.</li>
-      <li><strong>Internet</strong> — do poprawy tekstu przez LanguageTool, pobierania modeli językowych i przesyłania danych diagnostycznych ML Kit.</li>
+      <li><strong>Internet</strong> — do poprawy tekstu przez LanguageTool, pobierania modeli językowych i modeli rozpoznawania tekstu, przesyłania danych diagnostycznych ML Kit oraz raportów awarii i statystyk użycia.</li>
       <li><strong>Stan sieci</strong> — do sprawdzenia, czy urządzenie jest połączone z Wi-Fi, gdy włączone jest pobieranie modeli tylko przez Wi-Fi.</li>
       <li><strong>Powiadomienia</strong> — do sterowania czytaniem w tle i informowania o eksporcie audio.</li>
       <li><strong>Foreground service (media playback)</strong> — aby odczyt na głos mógł działać po zminimalizowaniu aplikacji.</li>
@@ -182,8 +222,10 @@
     <ul>
       <li>nie wymaga zakładania konta,</li>
       <li>nie wyświetla reklam,</li>
-      <li>nie zawiera własnej analityki ani SDK analitycznych do śledzenia zachowania użytkownika;
-        jedyne dane diagnostyczne to dane techniczne przesyłane przez Google ML Kit, opisane w punkcie 4.3.</li>
+      <li>nie zbiera identyfikatora reklamowego i nie udostępnia danych w celach reklamowych,</li>
+      <li>korzysta z Firebase Crashlytics i Google Analytics dla Firebase wyłącznie do raportów awarii
+        i statystyk użycia, które można wyłączyć w ustawieniach (punkt 4.5); poza tym Google ML Kit
+        przesyła dane techniczne opisane w punkcie 4.3.</li>
     </ul>
 
     <h2>7. Jak usunąć dane</h2>
@@ -192,6 +234,7 @@
       <li>Pobrane modele językowe można usunąć w ustawieniach aplikacji, w karcie „Tłumaczenie”.</li>
       <li>Pliki z eksportu audio w folderze <code>Music/ScanSpeak</code> można usunąć menedżerem plików.</li>
       <li>Odinstalowanie aplikacji usuwa wszystkie dane zapisane w pamięci aplikacji.</li>
+      <li>Wysyłanie raportów awarii i statystyk użycia można wyłączyć w Ustawieniach → Polityka prywatności. Dane już wysłane są usuwane automatycznie po okresach przechowywania podanych w punkcie 4.5; aby usunąć je wcześniej, napisz na adres e-mail podany niżej.</li>
     </ul>
 
     <h2>8. Udostępnianie danych osobom trzecim</h2>
@@ -202,7 +245,9 @@
     <ul>
       <li>tekst stron — do LanguageTool w celu poprawy tekstu (punkt 4.1),</li>
       <li>dane techniczne i pobieranie modeli językowych — do Google przez ML Kit i Usługi Google Play (punkty 4.2 i 4.3),</li>
-      <li>czytany tekst — do dostawcy silnika syntezy mowy, tylko gdy użytkownik wybierze głos online (punkt 4.4).</li>
+      <li>czytany tekst — do dostawcy silnika syntezy mowy, tylko gdy użytkownik wybierze głos online (punkt 4.4),</li>
+      <li>raporty awarii i statystyki użycia — do Google Firebase, gdy opcja jest włączona (punkt 4.5),</li>
+      <li>zapytania o pliki modeli rozpoznawania tekstu — do Google Play i Hugging Face, po wybraniu rosyjskiego lub arabskiego (punkt 4.6).</li>
     </ul>
 
     <h2>9. Kontakt</h2>

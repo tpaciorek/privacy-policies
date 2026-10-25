@@ -62,7 +62,7 @@
     <p class="lang-switch"><a href="privacy-policy-pl.html" hreflang="pl">Polish version</a></p>
 
     <h1>ScanSpeak Privacy Policy</h1>
-    <p class="meta">Last updated: 2026-09-18</p>
+    <p class="meta">Last updated: 2026-10-25</p>
 
     <div class="card">
       <strong>Controller / developer contact:</strong><br>
@@ -88,7 +88,8 @@
       <li>saved resume position,</li>
       <li>audio files created with the "Export to audio" feature,</li>
       <li>downloaded translation language models,</li>
-      <li>technical data required for system text-to-speech and notifications.</li>
+      <li>technical data required for system text-to-speech and notifications,</li>
+      <li>crash reports and usage statistics, while the option to send them is turned on (section 4.5).</li>
     </ul>
 
     <h2>3. Where data is stored</h2>
@@ -164,10 +165,48 @@
       that provider's privacy policy.
     </p>
 
+    <h3>4.5. Crash reports and usage statistics (Google Firebase)</h3>
+    <p>
+      To find and fix errors and to learn which features and languages are used, the app uses
+      <strong>Firebase Crashlytics</strong> and <strong>Google Analytics for Firebase</strong>
+      (Google Ireland Limited / Google LLC). This happens only while the
+      <strong>"Send crash reports and usage statistics"</strong> option is turned on in
+      Settings → Privacy policy. It is on by default and can be turned off at any time; when it is off,
+      no new crash reports or usage statistics are sent.
+    </p>
+    <p>The following data is sent:</p>
+    <ul>
+      <li><strong>Crash reports</strong> — the technical description of the error (stack trace), the state of the app at the time of the crash, device model and manufacturer, Android version, app version, free memory and disk space, and the app language and reading language,</li>
+      <li><strong>Usage statistics</strong> — app launches and sessions, the screens shown, saving a scan (scan source: camera, file, or clipboard; number of pages; reading language and its script), starting reading aloud (speech language and whether a page or the full text is read), the app language and the reading language,</li>
+      <li><strong>Technical identifiers</strong> — a random Firebase installation identifier and an app instance identifier, used to count crashes and users; they are not linked to the user's name, email, or Google account,</li>
+      <li><strong>Approximate location</strong> — Google derives the country and region from the IP address; the IP address itself is not stored by Google Analytics.</li>
+    </ul>
+    <p>
+      <strong>The text, images, titles, and translations of scans are never sent.</strong>
+      The app does not collect the advertising ID (AD_ID), does not use data for advertising or
+      personalized ads, and does not create a user profile across other apps.
+    </p>
+    <p>
+      Crashlytics keeps crash reports for 90 days. Google Analytics keeps event-level data for
+      2 months; aggregated reports (such as the number of users per country) may be kept longer.
+      Data is encrypted in transit (HTTPS) and may be processed on Google servers outside the user's
+      country, including in the United States, under Google's safeguards.
+      Details: <a href="https://firebase.google.com/support/privacy">Privacy and Security in Firebase</a>
+      and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.
+    </p>
+
+    <h3>4.6. Text recognition models for Russian and Arabic</h3>
+    <p>
+      When Russian or Arabic is selected as the reading language, the app downloads an additional
+      text recognition module through Google Play and recognition models (PaddleOCR) from
+      <code>huggingface.co</code>. These are ordinary downloads of fixed files: no images, text, or
+      identifiers are sent, and text recognition then runs on the device.
+    </p>
+
     <h2>5. Permissions and system features</h2>
     <ul>
       <li><strong>Document scanner (Google Play services)</strong> — to scan pages; the camera is handled by Google Play services and the app does not request the camera permission.</li>
-      <li><strong>Internet</strong> — for text correction via LanguageTool, downloading language models, and ML Kit diagnostic data.</li>
+      <li><strong>Internet</strong> — for text correction via LanguageTool, downloading language and text recognition models, ML Kit diagnostic data, and crash reports and usage statistics.</li>
       <li><strong>Network state</strong> — to check whether the device is on Wi-Fi when model downloads are limited to Wi-Fi.</li>
       <li><strong>Notifications</strong> — to control background reading and report audio export progress.</li>
       <li><strong>Foreground service (media playback)</strong> — so text-to-speech can continue after the app is minimized.</li>
@@ -181,8 +220,10 @@
     <ul>
       <li>it does not require creating an account,</li>
       <li>it does not display ads,</li>
-      <li>it contains no in-house analytics or analytics SDKs that track user behavior;
-        the only diagnostic data is the technical data sent by Google ML Kit, described in section 4.3.</li>
+      <li>it does not collect the advertising ID and does not share data for advertising,</li>
+      <li>it uses Firebase Crashlytics and Google Analytics for Firebase only for crash reports and
+        usage statistics, which can be turned off in the settings (section 4.5); in addition,
+        Google ML Kit sends the technical data described in section 4.3.</li>
     </ul>
 
     <h2>7. How to delete data</h2>
@@ -191,6 +232,7 @@
       <li>Downloaded language models can be deleted in the app settings, in the "Translation" card.</li>
       <li>Audio export files in the <code>Music/ScanSpeak</code> folder can be deleted with a file manager.</li>
       <li>Uninstalling the app removes all data stored in the app's storage.</li>
+      <li>Sending crash reports and usage statistics can be turned off in Settings → Privacy policy. Data already sent is deleted automatically after the retention periods in section 4.5; to have it deleted sooner, write to the email address below.</li>
     </ul>
 
     <h2>8. Sharing data with third parties</h2>
@@ -200,7 +242,9 @@
     <ul>
       <li>page text — to LanguageTool for text correction (section 4.1),</li>
       <li>technical data and language model downloads — to Google through ML Kit and Google Play services (sections 4.2 and 4.3),</li>
-      <li>text being read — to the text-to-speech engine provider, only when the user selects an online voice (section 4.4).</li>
+      <li>text being read — to the text-to-speech engine provider, only when the user selects an online voice (section 4.4),</li>
+      <li>crash reports and usage statistics — to Google Firebase, while the option is turned on (section 4.5),</li>
+      <li>requests for text recognition model files — to Google Play and Hugging Face, when Russian or Arabic is selected (section 4.6).</li>
     </ul>
 
     <h2>9. Contact</h2>
